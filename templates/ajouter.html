@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block titre %}Ajouter une tâche{% endblock %}
+
+{% block contenu %}
+<h2>Nouvelle tâche</h2>
+
+{% if erreur %}
+    <p style="color: red;">{{ erreur }}</p>
+{% endif %}
+
+<form method="post">
+    <label for="titre">Titre de la tâche :</label>
+    <input type="text" id="titre" name="titre" placeholder="Saisir le titre">
+
+    <br><br>
+
+    <label for="priorite">Priorité :</label>
+    <select id="priorite" name="priorite">
+        <option value="basse">Basse</option>
+        <option value="normale" selected>Normale</option>
+        <option value="haute">Haute</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Ajouter</button>
+</form>
+{% endblock %}
